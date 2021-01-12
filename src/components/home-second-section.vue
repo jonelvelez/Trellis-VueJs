@@ -1,5 +1,5 @@
 <template>
-    <div class="home-second-section">
+    <div class="home-second-section" id="whatwedo">
         <b-container>
             <b-row class="mb-5">
                 <b-col cols="12" class="text-center">

@@ -14,11 +14,11 @@
             </b-navbar-nav> -->
 
             <!-- Right aligned nav items -->
-            <b-navbar-nav class="ml-auto">
-                <b-nav-item href="#">Home</b-nav-item>
-                <b-nav-item href="#">What we do</b-nav-item>
-                <b-nav-item href="#">Our team</b-nav-item>
-                <b-nav-item href="#">Contact</b-nav-item>
+            <b-navbar-nav class="ml-auto" v-b-scrollspy:nav-scroller>
+                <b-nav-item id="1" @click="scrollIntoView" class="menu-item" href="#banner">Home</b-nav-item>
+                <b-nav-item id="2" @click="scrollIntoView"  class="menu-item" href="#whatwedo">What we do</b-nav-item>
+                <b-nav-item id="3" @click="scrollIntoView"  class="menu-item" href="#ourteam">Our team</b-nav-item>
+                <b-nav-item id="4" @click="scrollIntoView" class="menu-item" href="#contactus">Contact</b-nav-item>
             </b-navbar-nav>
             </b-collapse>
         </b-container>
@@ -26,27 +26,46 @@
    
 </template>
 
-<script>
+<script >
+// import func from '../../vue-temp/vue-editor-bridge';
 export default {
+    
       //* Scroll Navigation Animation *//
     created () {
         window.addEventListener('scroll', this.handlescroll);
     },
-  
+    // computed: {
+    //     menuClasses() {
+    //         return document.querySelectorAll('.menu-item')
+    //     }
+    // },
     methods: {
-        handlescroll() {
+         handlescroll() {
           let TrellisLogo = document.querySelector(".trellis-logo");
-
             if (window.scrollY > 0){
                 TrellisLogo.classList.add("addClassLogo")
             } else {
                 TrellisLogo.classList.remove("addClassLogo")
             }
-           
-        }
-    }
+        },
+        //   menuClick(){
+        //    let menus = this.menuClasses
+        //     Array.from(menus).forEach((menu) => {
+        //         menu.addEventListener('click', () => {
+        //             // let id = menu.getAttribute("id");
+        //             let screenHeight = screen.height;
+        //             // console.log(id)
+        //             // console.log(screenHight)
+        //             window.scrollBy(0, screenHeight);
+        //             // console.log(id * screenHeight)
+        //         });
+        //     });
+        // }
+    },
 }
 </script>
+
+
 
 <style scoped>
     .navbar {

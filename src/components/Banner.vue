@@ -1,5 +1,5 @@
 <template>
-    <div class="banner">
+    <div class="banner" id="banner">
         <div class="banner-content">
             <h1>We Build <span>Organisation</span> That Scale</h1>
             <b-button>LEARN MORE</b-button>
